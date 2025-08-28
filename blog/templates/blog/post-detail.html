@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load blog_extras cache %}
+
 {% block content %}
 <h2>{{ post.title }}</h2>
 <div class="row">
@@ -12,4 +14,6 @@
         {{ post.content|safe }}
     </div>
 </div>
+
+
 {% endblock %}
