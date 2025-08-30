@@ -64,6 +64,7 @@ class Dev(Configuration):
         "crispy_forms",
         "crispy_bootstrap5",
         "blog",
+        "blango_auth",
     ]
 
     MIDDLEWARE = [
@@ -103,6 +104,8 @@ class Dev(Configuration):
         }
     }
 
+    AUTH_USER_MODEL = "blango_auth.User"
+    
     AUTH_PASSWORD_VALIDATORS = [
         {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
         {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
