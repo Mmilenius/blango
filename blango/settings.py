@@ -106,6 +106,14 @@ class Dev(Configuration):
     }
 
     AUTH_USER_MODEL = "blango_auth.User"
+
+    REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.BasicAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+    ]
+}
     
     AUTH_PASSWORD_VALIDATORS = [
         {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
