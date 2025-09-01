@@ -3,10 +3,11 @@ from django.conf import settings
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericRelation
+
 # Create your models here.
 
 class Tag(models.Model):
-    value = models.TextField(max_length=100)
+    value = models.TextField(max_length=100, unique=True)
 
     def __str__(self):
         return self.value

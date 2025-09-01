@@ -1,4 +1,6 @@
 from rest_framework import serializers
+from blog.models import Post, Tag
+from blango_auth.models import User
 from blog.models import Post
 
 class PostSerializer(serializers.ModelSerializer):
@@ -6,3 +8,8 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = "__all__"
         readonly = ["modified_at", "created_at"]
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ["first_name", "last_name", "email"]
